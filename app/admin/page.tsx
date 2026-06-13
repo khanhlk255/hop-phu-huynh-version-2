@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 // Thay đổi import này để sử dụng đường dẫn tương đối ổn định nhất
-import { db } from '../lib/firebase';
+import { db } from './firebase';
 import { collection, onSnapshot, query, where, updateDoc, doc, getDocs } from 'firebase/firestore';
 import { Star, Sun, Pencil, Book, Send, Calendar } from 'lucide-react';
 
