@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { collection, getDocs, doc, updateDoc, onSnapshot, getDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db } from '../lib/firebase';
 import { Star, Sun, Heart, Send, Pencil, Book, Trophy, CheckCircle2, Clock, CalendarDays, Search, Smile, UserRound, StickyNote, RefreshCw, Sparkles, Quote } from "lucide-react";
 
 export default function Home() {
