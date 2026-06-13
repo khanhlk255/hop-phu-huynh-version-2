@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { db } from '../lib/firebase';
+// Sử dụng đường dẫn tuyệt đối @/ để luôn trỏ đúng vào thư mục lib ở gốc dự án
+import { db } from '@/lib/firebase';
 import { collection, onSnapshot, query, where, updateDoc, doc, getDocs } from 'firebase/firestore';
 import { Star, Sun, Pencil, Book, Send, Calendar } from 'lucide-react';
 
@@ -67,17 +68,11 @@ Cô đã nhận được lịch của bé {selectedStudent?.ten_hoc_sinh}. Hẹn
 return (
 
 
-
-
-
 Hành Trình Khôn Lớn Của Con 🌟
-
 Chào Ba Mẹ, một năm học nữa lại trôi qua với biết bao tiếng cười. Đây là khoảnh khắc tuyệt vời để Ba Mẹ và Nhà trường cùng nhìn lại chặng đường con đã đi qua. Mẹ hãy chọn khung giờ phù hợp để trò chuyện cùng Cô giáo chủ nhiệm nhé!
 
 
-
   <main className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-    {/* Bước 1 */}
     <div className="bg-white p-6 rounded-3xl border-2 border-[#A3E635] shadow-[6px_6px_0px_rgba(163,230,53,0.3)]">
       <h3 className="font-bold text-[#A3E635] flex items-center gap-2 mb-4"><Pencil /> 1. Tên bé</h3>
       <form onSubmit={handleSearch} className="flex gap-2">
@@ -86,7 +81,6 @@ Chào Ba Mẹ, một năm học nữa lại trôi qua với biết bao tiếng c
       </form>
     </div>
 
-    {/* Bước 2 */}
     <div className={`bg-white p-6 rounded-3xl border-2 border-[#FBBF24] shadow-[6px_6px_0px_rgba(251,191,36,0.3)] ${!selectedStudent ? 'opacity-50 pointer-events-none' : ''}`}>
       <h3 className="font-bold text-[#FBBF24] flex items-center gap-2 mb-4"><Calendar /> 2. Chọn lịch</h3>
       <div className="grid grid-cols-2 gap-2">
@@ -103,7 +97,6 @@ Chào Ba Mẹ, một năm học nữa lại trôi qua với biết bao tiếng c
       </div>
     </div>
 
-    {/* Bước 3 */}
     <div className={`col-span-1 md:col-span-2 bg-white p-6 rounded-3xl border-2 border-[#EF4444] shadow-[6px_6px_0px_rgba(239,68,68,0.3)] ${!selectedSlot ? 'opacity-50 pointer-events-none' : ''}`}>
       <h3 className="font-bold text-[#EF4444] flex items-center gap-2 mb-4"><Book /> 3. Thông tin xác nhận</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -120,11 +113,3 @@ Chào Ba Mẹ, một năm học nữa lại trôi qua với biết bao tiếng c
 
 );
 }
-
-
-**Cách làm để toàn bộ web đẹp đồng bộ:**
-1.  Vào GitHub, mở file **`app/admin/page.tsx`** và dán code màu "Primary Education" mình đã gửi ở tin nhắn trước.
-2.  Mở tiếp file **`app/page.tsx`** và dán đoạn code mình vừa gửi ngay ở trên.
-3.  Bấm Commit, đợi Vercel chạy xong.
-
-Bây giờ bạn sẽ có một bộ "đôi" trang Admin và trang Phụ huynh cùng tông màu "Primary Education", cực kỳ chuyên nghiệp và đáng yêu! Bạn làm nốt nhé!
